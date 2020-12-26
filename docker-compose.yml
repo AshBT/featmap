@@ -1,4 +1,4 @@
-version: "2.1"
+version: "3"
 services:
         postgres:
                 image: postgres:11-alpine
@@ -32,4 +32,13 @@ services:
                         - traefik.frontend.rule=Host:featmap.agilitytools.online
                         - traefik.docker.network=web
                         - traefik.port=${FEATMAP_HTTP_PORT}
+                        - traefik.docker.network=traefik_default
+                networks:
+                        - web
+                        - default
 
+networks:
+        web:
+                external: true
+        internal: :
+                external: false
