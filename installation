@@ -1,0 +1,4 @@
+sudo -i -u postgres
+createuser --interactive
+# create the ashleybt user
+createdb featmap_db

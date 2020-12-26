@@ -27,4 +27,9 @@ services:
                         condition: service_healthy
                 volumes:
                         - ${PWD}/conf.json:/opt/featmap/conf.json
+                labels:
+                        - traefik.backend=featmap
+                        - traefik.frontend.rule=Host:featmap.agilitytools.online
+                        - traefik.docker.network=web
+                        - traefik.port=${FEATMAP_HTTP_PORT}
 
