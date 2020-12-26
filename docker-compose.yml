@@ -40,5 +40,5 @@ services:
 networks:
         web:
                 external: true
-        internal: :
+        internal:
                 external: false
